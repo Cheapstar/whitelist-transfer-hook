@@ -27,6 +27,9 @@ pub struct InitializeExtraAccountMetaList<'info> {
     pub system_program: Program<'info, System>,
 }
 
+
+
+// What is the purpose of ExtraAccountMetaList, Now ?
 impl<'info> InitializeExtraAccountMetaList<'info> {
     pub fn extra_account_metas() -> Result<Vec<ExtraAccountMeta>> {
         // Derive the whitelist PDA using our program ID
