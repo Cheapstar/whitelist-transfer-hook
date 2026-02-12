@@ -41,9 +41,9 @@ pub struct TransferHook<'info> {
     //  So instead of having this ab mujhe pass karna hoga whitelisted pda of user 
     #[account(
         seeds = [b"whitelisted",owner.key().as_ref()], 
-        bump = whitelist.bump,
+        bump = whitelisted_account.bump,
     )]
-    pub whitelist: Account<'info, Whitelist>,
+    pub whitelisted_account: Account<'info, Whitelist>,
 }
 
 impl<'info> TransferHook<'info> {

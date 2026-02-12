@@ -24,11 +24,11 @@ pub mod whitelist_transfer_hook {
     use super::*;
 
     pub fn add_to_whitelist(ctx: Context<AddToWhitelist>, user: Pubkey) -> Result<()> {
-        ctx.accounts.add_to_whitelist(user)
+        ctx.accounts.add_to_whitelist()
     }
 
     pub fn remove_from_whitelist(ctx: Context<RemoveFromWhitelist>, user: Pubkey) -> Result<()> {
-        ctx.accounts.remove_from_whitelist(user)
+        ctx.accounts.remove_from_whitelist()
     }
 
     pub fn initialize_transfer_hook(ctx: Context<InitializeExtraAccountMetaList>) -> Result<()> {

@@ -45,16 +45,17 @@ pub struct RemoveFromWhitelist<'info> {
 
 
 impl<'info> AddToWhitelist<'info> {
-    pub fn add_to_whitelist(&mut self, user: Pubkey) -> Result<()> {
-        
+    pub fn add_to_whitelist(&mut self) -> Result<()> {
+                self.whitelisted_account.set_inner(
+            Whitelist { admin: *self.admin.key, bump: self.whitelisted_account.bump });
         msg!("User {} successfully whitelisted");
         Ok(())
     }
 }
 
 impl<'info> RemoveFromWhitelist<'info> {
-    pub fn remove_from_whitelist(&mut self, user: Pubkey) -> Result<()> {
-        
+    pub fn remove_from_whitelist(&mut self) -> Result<()> {
+
         msg!("User {} successfully whitelisted");
         Ok(())
     }
