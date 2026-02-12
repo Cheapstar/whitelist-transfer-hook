@@ -16,7 +16,7 @@ pub struct AddToWhitelist<'info> {
         init,
         payer = admin,
         space = 32 + 8 + 1,
-        seeds = [b"whitelist",user.as_ref()],
+        seeds = [b"whitelisted",user.as_ref()],
         bump,
     )]
     pub whitelisted_account: Account<'info, Whitelist>,
@@ -35,7 +35,7 @@ pub struct RemoveFromWhitelist<'info> {
         mut,
         close = admin,
         has_one = admin,
-        seeds = [b"whitelist",user.as_ref()],
+        seeds = [b"whitelisted",user.as_ref()],
         bump,
     )]
     pub whitelisted_account: Account<'info, Whitelist>,
